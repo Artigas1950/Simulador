@@ -1,10 +1,34 @@
-console.log("Incorporando Arrays");
-const carrito = [];
-let cantidad = 5;
-do
+console.log("Simulador de dado")
+
+let a = prompt("Ingrese cuantos dados quiere tirar del 1 al 4, ingrese 0 para salir")
+const resultados = []
+
+function azar()
 {
-    let entrada = prompt("Ingresar producto");
-    carrito.push(entrada);
+    var num = Math.random()
+    var num2 = num * 6 ;
+    var dado = Math.ceil(num2);
+    return dado
 }
-while(carrito.length !=cantidad)
-alert(carrito)
+
+while(a!=0)
+{
+    if (a>4)
+{
+    alert("numero incorrecto");
+}
+
+else if (a<=4)
+{
+    for(let x = 1; x <= a; x++)
+    {
+        let y = azar()
+        alert(`dado ${x}: ${y}`);
+        resultados.push(x);
+    }
+}
+a = prompt("Ingrese cuantos dados quiere tirar del 1 al 4, ingrese 0 para salir")
+}
+alert("Gracias por participar");
+console.log(resultados)
+
